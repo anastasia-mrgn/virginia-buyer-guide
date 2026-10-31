@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=ed4be046-f72e-494a-b72a-f6c07a2ac3b8
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virginia First-Time Homebuyer Guide · Anastasia Morgan</title>
+<meta name="description" content="A modern, step-by-step home buying guide from Anastasia Morgan, Realtor at eXp Realty. Virginia first-time buyer edition, updated for the 2026 market.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Archivo:wght@300;400;500;600;700&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #E8E8E4;          /* Neutral stone-cream */
+  --surface: #F1F1ED;     /* Lighter neutral */
+  --soft: #D2D2CC;        /* Cool stone-grey */
+  --soft-2: #ACABA4;      /* Cool grey */
+  --ink: #1C1C1A;         /* Charcoal */
+  --ink-2: #2C2C29;       /* Soft charcoal */
+  --muted: #686760;       /* Cool muted grey */
+  --line: #BDBCB4;        /* Cool grey line */
+  --accent: #82817A;      /* Neutral stone-grey */
+  --accent-dark: #424039; /* Deep stone-grey */
+  --tag: #424039;         /* Deep grey for tags */
+  --shadow: 0 1px 3px rgba(28,28,26,0.05), 0 12px 32px rgba(28,28,26,0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink-2);
+  line-height: 1.65;
+  font-weight: 300;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: 'Italiana', Georgia, serif;
+  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.15;
+}
+
+.script {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+}
+
+a { color: var(--accent-dark); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--ink); }
+
+/* ===== Layout ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.narrow { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+
+/* ===== Top Nav ===== */
+.topnav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topnav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px; max-width: 1280px; margin: 0 auto;
+}
+.brand {
+  font-family: 'Italiana', serif;
+  font-size: 22px; font-weight: 400; color: var(--ink);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.brand small { font-family: 'Archivo', sans-serif; font-size: 9px; font-weight: 400; color: var(--muted); display: block; letter-spacing: 0.25em; text-transform: uppercase; margin-top: 4px;}
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--ink); color: #fff !important;
+  padding: 10px 18px; font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; border-radius: 2px;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--accent-dark); color: #fff !important; }
+@media (max-width: 820px) {
+  .nav-links { display: none; }
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 110px 32px 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(250,248,245,0.55) 0%, rgba(250,248,245,0.85) 60%, rgba(250,248,245,1) 100%),
+    url('img/va-hero.jpg') center/cover no-repeat;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(250,248,245,0.4) 100%);
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(48px, 8vw, 104px);
+  line-height: 1.0;
+  margin-bottom: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.hero h1 em { font-style: normal; font-weight: 400; color: var(--accent-dark); }
+.hero-sub {
+  font-family: 'Archivo', sans-serif;
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+.hero-meta {
+  display: inline-flex; gap: 20px; align-items: center;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+.hero-meta span { display: flex; align-items: center; gap: 8px; }
+.hero-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+/* ===== Section base ===== */
+section { padding: 72px 0; }
+section.alt { background: var(--surface); }
+.section-tag {
+  display: inline-block;
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--accent-dark); font-weight: 500;
+  margin-bottom: 16px;
+  padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+.section-title {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: 18px;
+}
+.section-title em { font-style: normal; color: var(--accent-dark); font-weight: 400; letter-spacing: 0.02em; }
+.section-lead {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--ink-2);
+  max-width: 680px;
+  margin-bottom: 48px;
+  line-height: 1.55;
+}
+
+/* ===== About ===== */
+.about-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: center;
+}
+.about-grid p { margin-bottom: 18px; color: var(--ink-2); }
+.about-photo {
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+  position: relative; overflow: hidden;
+  background: var(--soft) url('img/anastasia-profile.jpg') center 25%/cover no-repeat;
+  box-shadow: var(--shadow);
+}
+.about-photo::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.05) 100%);
+}
+.about-photo span { display: none; }
+
+.values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 64px; padding: 48px 40px; background: var(--soft); border-radius: 2px; }
+.values h4 { font-family: 'Italiana', serif; font-size: 22px; letter-spacing: 0.03em; margin-bottom: 12px; }
+.values p { font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+
+@media (max-width: 820px) {
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .values { grid-template-columns: 1fr 1fr; padding: 32px 24px; gap: 24px; }
+}
+@media (max-width: 480px) {
+  .values { grid-template-columns: 1fr; }
+}
+
+/* ===== Process Steps ===== */
+.steps-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
+  margin-top: 32px;
+}
+.step-card {
+  background: var(--surface);
+  padding: 32px 24px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  position: relative;
+  transition: transform .25s, box-shadow .25s;
+}
+.step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.step-num {
+  font-family: 'Italiana', serif;
+  font-style: italic;
+  font-size: 56px;
+  color: var(--soft-2);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.step-card h4 { font-size: 22px; margin-bottom: 14px; }
+.step-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+@media (max-width: 980px) { .steps-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .steps-grid { grid-template-columns: 1fr; } }
+
+/* ===== Callout boxes ===== */
+.callout {
+  background: var(--soft);
+  border-left: 3px solid var(--accent);
+  padding: 24px 28px;
+  margin: 32px 0;
+  border-radius: 0 2px 2px 0;
+}
+.callout strong { color: var(--ink); font-weight: 500; }
+.callout-title {
+  font-family: 'Italiana', serif;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px; color: var(--ink);
+}
+.callout.warn { background: #fbf3eb; border-left-color: #c97a3a; }
+.callout.new {
+  background: #ecf1ec; border-left-color: #5d7158;
+}
+.new-badge {
+  display: inline-block;
+  background: #5d7158; color: #fff;
+  font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 2px;
+  margin-bottom: 10px; font-family: 'Archivo', sans-serif; font-weight: 500;
+}
+
+/* ===== Two-col ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; }
+@media (max-width: 820px) { .two-col { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ===== Lists ===== */
+.check-list { list-style: none; }
+.check-list li {
+  padding: 10px 0 10px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: '✓'; position: absolute; left: 0; top: 10px;
+  color: var(--accent); font-weight: 600;
+}
+
+.q-list { list-style: none; counter-reset: q; }
+.q-list li {
+  padding: 18px 0 18px 48px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  counter-increment: q;
+}
+.q-list li::before {
+  content: counter(q, decimal-leading-zero);
+  position: absolute; left: 0; top: 18px;
+  font-family: 'Italiana', serif;
+  font-size: 22px;
+  color: var(--accent);
+}
+.q-list .q-title { font-weight: 500; color: var(--ink); display: block; margin-bottom: 4px; font-size: 15px; }
+.q-list .q-body { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* ===== Tables ===== */
+.cost-table { width: 100%; border-collapse: collapse; margin-top: 24px; background: var(--surface); }
+.cost-table th, .cost-table td {
+  padding: 18px 20px; text-align: left;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.cost-table th {
+  background: var(--soft); font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.15em; font-size: 11px;
+  color: var(--ink);
+}
+.cost-table td.cost { font-weight: 500; color: var(--ink); white-space: nowrap; }
+.cost-table tr:last-child td { border-bottom: none; }
+
+.freq-badge {
+  display: inline-block;
+  font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 2px; font-weight: 500;
+  font-family: 'Archivo', sans-serif;
+  margin-left: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.freq-badge.typical { background: var(--soft); color: var(--accent-dark); }
+.freq-badge.situational { background: #ece8df; color: #8a6a3a; }
+
+/* ===== FAQ accordion ===== */
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin-bottom: 12px;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.faq details[open] { box-shadow: var(--shadow); }
+.faq summary {
+  padding: 22px 28px;
+  cursor: pointer;
+  font-family: 'Italiana', serif;
+  font-size: 22px; color: var(--ink);
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background .2s;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { background: var(--bg); }
+.faq summary::after {
+  content: '+';
+  font-size: 24px; color: var(--accent);
+  font-family: 'Archivo', sans-serif; font-weight: 300;
+  transition: transform .25s;
+  margin-left: 16px;
+}
+.faq details[open] summary::after { content: '−'; }
+.faq .faq-body {
+  padding: 0 28px 28px; color: var(--ink-2); font-size: 15px;
+}
+.faq .faq-body p { margin-bottom: 12px; }
+.faq .faq-body p:last-child { margin-bottom: 0; }
+
+/* ===== Testimonials ===== */
+.testimonials { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+@media (max-width: 820px) { .testimonials { grid-template-columns: 1fr; } }
+.testimonial {
+  background: var(--surface);
+  padding: 36px;
+  border-top: 2px solid var(--accent);
+  border-radius: 0 0 2px 2px;
+}
+.testimonial-quote {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7; color: var(--ink-2);
+  margin-bottom: 24px;
+}
+.testimonial-quote::before {
+  content: '"'; font-size: 56px; line-height: 0; vertical-align: -20px;
+  color: var(--accent); margin-right: 4px;
+}
+.testimonial-meta {
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--muted);
+}
+.stars { color: #d4af37; letter-spacing: 2px; margin-bottom: 12px; font-size: 14px; }
+
+/* ===== Timeline ===== */
+.timeline {
+  position: relative; padding-left: 40px;
+}
+.timeline::before {
+  content: ''; position: absolute; left: 12px; top: 8px; bottom: 8px;
+  width: 1px; background: var(--line);
+}
+.timeline-item { position: relative; padding-bottom: 36px; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -32px; top: 6px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.timeline-item h4 { font-size: 22px; margin-bottom: 8px; }
+.timeline-item .timeline-meta {
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.timeline-item p { color: var(--ink-2); font-size: 15px; }
+
+/* ===== Moving checklist ===== */
+.moving-block {
+  background: var(--surface);
+  padding: 32px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+}
+.moving-block h4 {
+  font-family: 'Italiana', serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+  color: var(--ink);
+}
+.moving-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px;
+}
+.moving-grid label {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 14px; padding: 6px 0; cursor: pointer;
+  color: var(--ink-2);
+}
+.moving-grid input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: var(--accent-dark);
+}
+@media (max-width: 640px) { .moving-grid { grid-template-columns: 1fr; } }
+
+/* ===== Pull quote ===== */
+.pull-quote {
+  font-family: 'Italiana', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--ink);
+  max-width: 820px;
+  margin: 64px auto;
+  padding: 0 32px;
+}
+.pull-quote::before, .pull-quote::after { content: '·'; color: var(--accent); display: block; font-size: 32px; line-height: 1; }
+.pull-quote::before { margin-bottom: 24px; }
+.pull-quote::after { margin-top: 24px; }
+
+/* ===== CTA / Contact ===== */
+.cta {
+  background: var(--ink);
+  color: #fff;
+  padding: 96px 32px;
+  text-align: center;
+}
+.cta .section-tag { color: var(--soft); border-color: rgba(255,255,255,0.2); }
+.cta h2 { color: #fff; font-size: clamp(40px, 6vw, 64px); margin-bottom: 24px; }
+.cta h2 em { color: var(--soft); }
+.cta-lead { color: rgba(255,255,255,0.78); font-family: 'Archivo', sans-serif; font-weight: 300; font-size: 17px; max-width: 640px; margin: 0 auto 48px; line-height: 1.6; }
+.cta-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  max-width: 720px; margin: 0 auto 48px;
+}
+.cta-grid > div { padding: 24px; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; }
+.cta-grid .label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+.cta-grid .value { font-family: 'Italiana', serif; font-size: 20px; color: #fff; }
+.cta-grid .value a { color: #fff; }
+.cta-grid .value a:hover { color: var(--soft); }
+@media (max-width: 720px) { .cta-grid { grid-template-columns: 1fr; } }
+
+.cta-button {
+  display: inline-block;
+  background: #fff; color: var(--ink) !important;
+  padding: 18px 40px;
+  font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: background .2s, transform .2s;
+}
+.cta-button:hover { background: var(--soft); transform: translateY(-2px); }
+
+/* ===== Footer ===== */
+footer {
+  padding: 40px 32px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+footer .exp { font-weight: 600; color: var(--ink); }
+footer a { color: inherit; }
+footer { line-height: 1.9; }
+
+/* ===== Print ===== */
+@media print {
+  .topnav, .cta-button { display: none; }
+  body { background: white; font-size: 11pt; }
+  section { padding: 24px 0; page-break-inside: avoid; }
+  .step-card, .moving-block, .testimonial { box-shadow: none; }
+}
+
+/* ===== Editorial image blocks ===== */
+.image-block {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center;
+  margin: 32px 0;
+  box-shadow: var(--shadow);
+}
+.image-block.tall { aspect-ratio: 4/5; }
+.image-block.wide { aspect-ratio: 21/9; }
+
+.image-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 40px 0;
+  align-items: stretch;
+}
+.image-split .image-block { margin: 0; height: 100%; }
+@media (max-width: 720px) { .image-split { grid-template-columns: 1fr; } }
+
+.section-banner {
+  width: 100vw;
+  position: relative;
+  left: 50%; right: 50%;
+  margin-left: -50vw; margin-right: -50vw;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 64px; margin-bottom: 64px;
+}
+
+/* ===== Reviews widget container ===== */
+.reviews-widget {
+  background: var(--surface);
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  margin-top: 32px;
+  text-align: center;
+}
+.reviews-widget-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* ===== Download button ===== */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--ink);
+  color: #fff !important;
+  padding: 16px 28px;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 2px;
+  margin-top: 32px;
+  transition: background .2s, transform .2s;
+}
+.download-btn:hover { background: var(--accent-dark); color: #fff !important; transform: translateY(-2px); }
+.download-btn::before {
+  content: '↓';
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+/* ===== Utilities ===== */
+.divider {
+  height: 1px; background: var(--line);
+  max-width: 80px; margin: 24px 0;
+}
+.divider.center { margin: 24px auto; }
+.subhead {
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 12px; font-weight: 500;
+}
+p + h3 { margin-top: 36px; }
+h3 { font-size: 28px; margin-bottom: 16px; }
+section p { margin-bottom: 18px; }
+
+</style>
+</head>
+<body>
+
+<!-- ===== Top Nav ===== -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">
+      Anastasia Morgan
+      <small>Brokered by eXp Realty, LLC</small>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#finances">Finances</a>
+      <a href="#va-programs">VA Programs</a>
+      <a href="#search">Search</a>
+      <a href="#contract">Contract</a>
+      <a href="#closing">Closing</a>
+    </div>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Your Ultimate Guide to</div>
+    <h1>Buying<br>your <em>First Home</em></h1>
+    <p class="hero-sub">in Virginia · with Anastasia Morgan · 2026 Edition</p>
+    <div class="hero-meta">
+      <span><span class="dot"></span>Greater Richmond, Virginia</span>
+      <span><span class="dot"></span>eXp Realty</span>
+      <span><span class="dot"></span>First-Time Buyer Edition</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== About ===== -->
+<section id="about" class="alt">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">A little <em>about me</em></h2>
+        <p>I'm Anastasia, a Realtor licensed in Virginia and Colorado, serving the City of Richmond, Henrico, Chesterfield, Hanover, Goochland, and New Kent. Real estate and architecture: I studied architecture at Korea University, so I read a house for what it is and what it could become, from the structure and layout to the light and the lot. That's how I work: detail-obsessed about the property itself, calm and strategic about the deal.</p>
+        <p>I help buyers, sellers, and investors navigate one of the largest financial decisions of their lives. My goal isn't just to close. It's to make sure you understand every step, never feel rushed, and end up in a home you actually love.</p>
+        <p>Buying your first home should feel like shopping with a friend who knows the business. I'll bring clear communication, sharp negotiation, and a process that respects your time. I work with clients in English, Korean, and Russian.</p>
+      </div>
+      <div class="about-photo"><span>Anastasia Morgan</span></div>
+    </div>
+
+    <div class="values">
+      <div>
+        <h4>Curious</h4>
+        <p>I want a clear picture of your goals, who you are, and what "home" means to you before we tour a single property.</p>
+      </div>
+      <div>
+        <h4>Committed</h4>
+        <p>I bring my A-game to every transaction and treat your deal as if it were my own.</p>
+      </div>
+      <div>
+        <h4>Proactive</h4>
+        <p>I'm one step ahead, anticipating roadblocks and finding creative solutions before they slow us down.</p>
+      </div>
+      <div>
+        <h4>Personal</h4>
+        <p>I build long-term relationships. My clients aren't transactions. Most become friends and referrals for life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<!-- Editorial banner image -->
+<div class="section-banner" style="background-image: url('img/va-james-skyline.jpg'); background-position: center 55%;"></div>
+
+<!-- ===== Process Overview ===== -->
+<section id="process">
+  <div class="container">
+    <span class="section-tag">The Process</span>
+    <h2 class="section-title">From <em>"I want to buy"</em> to <em>keys in hand</em></h2>
+    <p class="section-lead">The home buying process can feel overwhelming, but it really comes down to five steps. Here's the flyover view; we'll go deep on each below.</p>
+
+    <div class="steps-grid">
+      <a href="#finances" class="step-card" style="text-decoration:none; color:inherit;">
+        <div class="step-num">01</div>
+        <h4>Finances</h4>
+        <p>Pre-approval, Virginia assistance programs, down payment, closing cost prep.</p>
+      </a>
+      <a href="#search" class="step-card" style="text-decoration:none; color:inherit;">
+        <div class="step-num">02</div>
+        <h4>Home Search</h4>
+        <p>Wants vs needs, online filtering, showings, finding "the one."</p>
+      </a>
+      <a href="#contract" class="step-card" style="text-decoration:none; color:inherit;">
+        <div class="step-num">03</div>
+        <h4>Under Contract</h4>
+        <p>Strong offer, negotiation, escrow deposit, loan application.</p>
+      </a>
+      <a href="#diligence" class="step-card" style="text-decoration:none; color:inherit;">
+        <div class="step-num">04</div>
+        <h4>Due Diligence</h4>
+        <p>Inspections, appraisal, insurance, repair negotiations.</p>
+      </a>
+      <a href="#closing" class="step-card" style="text-decoration:none; color:inherit;">
+        <div class="step-num">05</div>
+        <h4>Closing Time</h4>
+        <p>Final walk-through, wire funds, sign the papers, get the keys.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Step 1: Finances ===== -->
+<section id="finances" class="alt">
+  <div class="container">
+    <span class="section-tag">Step 01 · Finances</span>
+    <h2 class="section-title">The <em>Mortgage Process</em></h2>
+    <p class="section-lead">Step one is getting a pre-approval letter from a lender stating how much you're qualified for. A pre-approval is valid for 60–90 days, so we time it for when you're ready to actively shop.</p>
+
+    <div class="callout">
+      <strong>Don't understand something your lender says?</strong> Stop and ask. This is your home buying journey, and you deserve to understand every step. If your lender makes you feel rushed or talked down to, that's your sign to interview a different one.
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Today's rates and creative financing</div>
+      <p>Rates have stayed elevated compared to the 2020–2022 era. The good news: sellers are far more open to <strong>concessions, rate buy-downs (2-1 or 3-2-1), and closing cost help</strong>. We'll structure your offer to take advantage of where the market actually is, not where it was three years ago.</p>
+    </div>
+
+    <div class="image-split">
+      <div class="image-block" style="background-image: url('img/va-brick-columns.jpg');"></div>
+      <div class="image-block" style="background-image: url('img/va-front-door.jpg');"></div>
+    </div>
+
+    <h3 style="margin-top: 56px;">5 Questions to Ask Every Lender</h3>
+    <ol class="q-list">
+      <li>
+        <span class="q-title">What type of loan do you recommend for me, and why?</span>
+        <span class="q-body">There's no universally "best" mortgage. Just the best one for your situation. Conventional, FHA, VA, USDA, jumbo: each has tradeoffs. Make sure they explain why their pick fits you.</span>
+      </li>
+      <li>
+        <span class="q-title">What's the minimum down payment, and how does it change with the loan type?</span>
+        <span class="q-body">Down payments range from 0% (VA/USDA) to 20%+ (jumbo or to avoid PMI). Be honest about what you have on hand. There are programs you may not know exist.</span>
+      </li>
+      <li>
+        <span class="q-title">What's the interest rate AND the APR?</span>
+        <span class="q-body">Everyone quotes the rate. The APR includes lender fees and is the truer comparison number. Ask for both.</span>
+      </li>
+      <li>
+        <span class="q-title">Can I lock the rate? For how long, and what does it cost?</span>
+        <span class="q-body">If rates are climbing, locking can save thousands. Some lenders offer free 30–60 day locks; longer locks usually cost extra.</span>
+      </li>
+      <li>
+        <span class="q-title">What will my closing costs be, and can they be financed or covered by seller credits?</span>
+        <span class="q-body">Closing costs typically run 2–5% of the loan amount. We can often negotiate for the seller to cover some or all of them.</span>
+      </li>
+      <li>
+        <span class="q-title">Do you offer rate buy-downs, and is it worth it for my scenario?</span>
+        <span class="q-body">A 2-1 buy-down lowers your rate by 2% in year one, 1% in year two, then settles at your full rate. Often paid by the seller as a concession, and a powerful tool in today's market.</span>
+      </li>
+    </ol>
+
+  </div>
+</section>
+
+<!-- ===== Virginia First-Time Buyer Programs ===== -->
+<section id="va-programs">
+  <div class="container">
+    <span class="section-tag">First-Time Buyer · Virginia</span>
+    <h2 class="section-title">Money on the table <em>for first-time buyers</em></h2>
+    <p class="section-lead">Virginia has some of the strongest first-time buyer help in the country, and most of it runs through Virginia Housing (the state housing finance agency). Your lender applies for these, not you, so the first move is choosing a Virginia Housing-approved lender.</p>
+
+    <div class="callout new">
+      <span class="new-badge">Start Here</span>
+      <div class="callout-title">Virginia Housing Down Payment Assistance Grant</div>
+      <p>A <strong>true grant you never repay</strong>: up to 2% of the purchase price with a Virginia Housing conventional loan, or 2.5% with a Virginia Housing FHA loan. You bring at least 1% down, and the grant covers the rest of the down payment. You must be a first-time buyer (or buying in an Area of Economic Opportunity), use an eligible Virginia Housing bond loan, and fall within household income and sales price limits. It can be paired with assistance from outside Virginia Housing, including the local programs below.</p>
+    </div>
+
+    <ol class="q-list">
+      <li>
+        <span class="q-title">Virginia Housing Plus Second Mortgage</span>
+        <span class="q-body">A 30-year fixed second loan that covers the down payment, so you can buy with 0% down (Virginia Housing lets qualified buyers borrow up to 1.5% more than the sales price). Open to first-time and repeat buyers, with higher income limits than the grant. It is a loan, not a gift, so it adds a second monthly payment, and it can't be combined with the grant. Best fit if your income is over the grant limit.</span>
+      </li>
+      <li>
+        <span class="q-title">DHCD Down Payment &amp; Closing Cost Assistance (through local programs)</span>
+        <span class="q-body">The Virginia Department of Housing and Community Development funds help that is delivered by local governments and nonprofit housing agencies, not by DHCD directly. Two programs:<br>
+        <strong>HOMEownership DPA:</strong> first-time buyers at or below 80% of area median income (AMI). Up to 10% of the sales price (15% in DHCD-approved areas) plus up to $2,500 toward closing costs, capped at $40,000. Structured as a deferred second loan.<br>
+        <strong>Virginia Pilot DPA:</strong> first-time buyers at or below 60% of AMI. Up to $50,000, forgivable over 15 years.<br>
+        Both expect a small contribution from you (up to 1% of the price) and homebuyer education. Processing runs through the local agency and takes longer than a grant, so we start the application before we write an offer.</span>
+      </li>
+      <li>
+        <span class="q-title">Virginia Housing Closing Cost Assistance Grant</span>
+        <span class="q-body">A true grant for first-time buyers using a Virginia Housing VA or RHS (USDA) bond loan. It can reduce or eliminate the cash you need for closing costs. Income limits apply.</span>
+      </li>
+      <li>
+        <span class="q-title">HOME of Virginia: homebuyer education and counseling</span>
+        <span class="q-body">Housing Opportunities Made Equal of Virginia (HOME) is a Richmond nonprofit offering free one-on-one pre-purchase counseling, group homebuyer classes, money management, and credit recovery classes. It serves Richmond, Henrico, Chesterfield, Hanover, Goochland, Powhatan, Colonial Heights, and Hopewell. HOME also helps eligible buyers access down payment and closing cost assistance (household income at or below 80% of AMI and at least $40,000 a year). Some assistance programs require this kind of education and counseling before closing, so start early: apply online at homeofva.org, allow up to 10 business days for review, then complete the education course and a counseling appointment.</span>
+      </li>
+      <li>
+        <span class="q-title">Virginia Housing free homebuyer class</span>
+        <span class="q-body">Required for Virginia Housing loans, free, in person or online. It covers credit, budgeting, lenders, inspections, and closing. Take it now, before we find the house, so it never holds up your loan.</span>
+      </li>
+      <li>
+        <span class="q-title">Virginia First-Time Home Buyer Savings Account</span>
+        <span class="q-body">Still saving? Designate a savings or investment account as a first-time home buyer account and the interest and gains come off your Virginia taxable income. Limits: $50,000 of principal and $150,000 of principal plus interest per account. The money must go to the down payment or closing costs, or the tax break is paid back. Ask your tax preparer to set it up on your Virginia return.</span>
+      </li>
+    </ol>
+
+    <h3 style="margin-top: 56px;">Which path fits you</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>If your household income is</th><th>Look at first</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>At or below 60% of AMI</strong></td><td>Virginia Pilot DPA through a local agency, stacked with the Virginia Housing grant. Start with HOME of Virginia counseling.</td></tr>
+        <tr><td><strong>At or below 80% of AMI</strong></td><td>DHCD HOMEownership DPA through a local program, plus the Virginia Housing grant. Start with HOME of Virginia counseling.</td></tr>
+        <tr><td><strong>Within Virginia Housing grant limits</strong></td><td>Virginia Housing Down Payment Assistance Grant with a Virginia Housing conventional or FHA loan.</td></tr>
+        <tr><td><strong>Above the grant limits</strong></td><td>Virginia Housing Plus Second Mortgage, or a standard loan with seller-paid closing costs.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--muted); margin-top: 12px;">AMI and program limits vary by locality and household size and change each year. Your lender and the local program confirm what you qualify for.</p>
+
+    <h3 style="margin-top: 56px;">Who pays what at a Virginia closing</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Cost</th><th>How it works in Virginia</th><th>Usually paid by</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Recordation tax</strong></td><td>State tax of $0.25 per $100, charged on the deed (purchase price) and on the deed of trust (loan amount), plus a local add-on of about one-third of the state rate in localities that adopt it. On a $350,000 home, the state tax on the deed alone is $875.</td><td class="cost">Buyer</td></tr>
+        <tr><td><strong>Grantor tax & deed prep</strong></td><td>$0.50 per $500 of price ($0.10 per $100), plus preparing the deed.</td><td class="cost">Seller</td></tr>
+        <tr><td><strong>Lender's title policy</strong></td><td>Required by your lender to protect the loan.</td><td class="cost">Buyer</td></tr>
+        <tr><td><strong>Owner's title policy</strong></td><td>Protects you. We make sure the contract addresses it.</td><td class="cost">Commonly seller</td></tr>
+        <tr><td><strong>Lender fees, appraisal, settlement fee</strong></td><td>Shown on your Loan Estimate. Compare lenders line by line.</td><td class="cost">Buyer</td></tr>
+        <tr><td><strong>Prepaids & escrow</strong></td><td>First year of insurance and a cushion for property taxes. City of Richmond is $1.20 per $100 of assessed value for 2026; county rates differ.</td><td class="cost">Buyer</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 13px; color: var(--muted); margin-top: 12px;">Seller concessions can cover some or all of your share. Program amounts, limits, and rates change; your lender confirms what you qualify for.</p>
+
+    <div class="callout" style="margin-top: 32px;">
+      <div class="callout-title">My recommendation</div>
+      <p>Get pre-approved with a Virginia Housing-approved lender this week and ask them to run you for the Down Payment Assistance Grant first. If your income is at or below 80% of AMI, apply with HOME of Virginia the same week so the local DHCD assistance can stack on top. If you are over the grant limit, ask about the Plus Second Mortgage. Then take the free homebuyer class. Those three steps put you in a position to make an offer the day we find the right house.</p>
+    </div>
+
+    <p style="font-size: 12px; color: var(--muted); margin-top: 28px; line-height: 1.7;"><strong>Sources:</strong> Virginia Housing, Down Payment Assistance Grant and Homebuyer Programs (virginiahousing.com); Virginia DHCD, Down Payment Assistance programs (dhcd.virginia.gov/dpa) and DPA Program Guidelines; HOME of Virginia, Homeownership (homeofva.org/get-help/homeownership); Virginia Housing, Home Loan Options guide; Virginia Tax, First-Time Home Buyer Savings Account Subtraction (tax.virginia.gov); Va. Code §36-173; Va. Code §58.1-801, §58.1-802, §58.1-3800; Va. Code §54.1-2132, §54.1-2137; City of Richmond 2026 rate as reported by NFM Lending.</p>
+  </div>
+</section>
+
+<!-- ===== Before We Tour ===== -->
+<section id="agreement" class="alt">
+  <div class="container">
+    <span class="section-tag">Before We Tour</span>
+    <h2 class="section-title">Your buyer agreement <em>and how I'm paid</em></h2>
+    <p class="section-lead">With your financing and assistance lined up, the last step before we tour is putting our working relationship in writing. Here's what that means and why it protects you.</p>
+
+    <div class="callout new">
+      <span class="new-badge">Virginia Law</span>
+      <div class="callout-title">A written buyer agreement comes first</div>
+      <p>Virginia law requires a written buyer brokerage agreement before I show you a home (Va. Code §54.1-2132 and §54.1-2137). It spells out my services, the term, and how I'm paid, and we'll walk through every line together before you sign.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Buyer-side compensation is no longer assumed</div>
+      <p>Sellers are no longer required to advertise compensation to a buyer's agent. In most deals, we still negotiate for the seller to cover it as part of the offer, but if they won't, we have options (concessions, financing it into your loan, etc.). I'll never let this become a surprise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Meet My Team ===== -->
+<section>
+  <div class="container">
+    <span class="section-tag">Your Team</span>
+    <h2 class="section-title">You're not just hiring <em>me.</em></h2>
+    <p class="section-lead">Behind every one of my buyers is a coordinated team. I run point on the parts of the deal where judgment, relationships, and negotiation make or break the outcome. My team handles the operational machinery so nothing slips through the cracks.</p>
+
+    <div class="diff-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="diff-card">
+        <div class="step-num" style="font-family: 'Italiana', serif; font-size: 56px; color: var(--soft-2); line-height: 1; margin-bottom: 8px; letter-spacing: 0.04em;">A</div>
+        <h4>Lead Agent · Anastasia</h4>
+        <p>Strategy, negotiation, contract structuring, market analysis, and direct advisory. The decisions where having the right voice in the room matters most. You always work directly with me on these.</p>
+      </div>
+      <div class="diff-card">
+        <div class="step-num" style="font-family: 'Italiana', serif; font-size: 56px; color: var(--soft-2); line-height: 1; margin-bottom: 8px; letter-spacing: 0.04em;">S</div>
+        <h4>Showing Agent</h4>
+        <p>Hosts your tours, opens doors, attends inspections, and runs final walk-throughs. Means I'm never the bottleneck for getting you into a home. You can almost always tour the same day or the next.</p>
+      </div>
+      <div class="diff-card">
+        <div class="step-num" style="font-family: 'Italiana', serif; font-size: 56px; color: var(--soft-2); line-height: 1; margin-bottom: 8px; letter-spacing: 0.04em;">T</div>
+        <h4>Transaction Coordinator</h4>
+        <p>Tracks every deadline, manages paperwork, coordinates with title, lender, and inspectors, and keeps the file compliant from contract to close. Nothing falls through the cracks because someone whose entire job is watching is watching.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top: 48px;">
+      <div class="callout-title">What this means for you</div>
+      <p>You get the senior-agent experience without the senior-agent waitlist. I'm freed up to focus on strategy and negotiation, which is where I add the most value to your search and your deal. My team handles execution. The result: faster scheduling, sharper decision-making, and a process that runs on rails.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Step 2: Search ===== -->
+<section id="search" class="alt">
+  <div class="container">
+    <span class="section-tag">Step 02 · Home Search</span>
+    <h2 class="section-title">Searching <em>strategically</em></h2>
+    <p class="section-lead">Before we tour anything, I'll have you build two lists: Needs (non-negotiables) and Wants (nice-to-haves). It saves us months of touring the wrong houses.</p>
+
+    <div class="two-col">
+      <div>
+        <h3>Needs might look like</h3>
+        <ul class="check-list">
+          <li>Enough square footage for your household (now and 5 years out)</li>
+          <li>Right number of bedrooms and bathrooms</li>
+          <li>Main-floor primary suite (or single-story)</li>
+          <li>Reasonable commute to work / school district</li>
+          <li>Attached garage</li>
+          <li>Fenced yard for kids or pets</li>
+          <li>Within your real budget after rate, taxes, insurance, HOA</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Wants might look like</h3>
+        <ul class="check-list">
+          <li>Specific paint color or exterior style</li>
+          <li>Pool, hot tub, or other water feature</li>
+          <li>Specific carpet, hardwood, or tile</li>
+          <li>Updated kitchen (quartz counters, gas range, etc.)</li>
+          <li>Walk-in closet, double vanity, soaking tub</li>
+          <li>View, mountain access, walkability</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-block wide" style="background-image: url('img/va-rva-rooftops.jpg');"></div>
+
+    <div class="pull-quote">
+      You can't change the lot, the location, or the price you paid. Spend more time on those three than on anything else.
+    </div>
+
+    <h3>Tips for searching online</h3>
+    <p>You already know the sites: Zillow, Redfin, Realtor.com. Here's how to actually use them well:</p>
+    <ul class="check-list">
+      <li><strong>Use filters, but loosely.</strong> Tight filters cut you off from "the one." Set max price slightly above your real cap, since homes often sell under ask, especially with concessions.</li>
+      <li><strong>Pull up Google Street View on every listing.</strong> Photos are heavily edited. Street View shows the neighbors, the road, the actual surroundings.</li>
+      <li><strong>Check the property's history.</strong> Sold three times in five years? Big price drop? Worth asking why before we tour.</li>
+      <li><strong>Send me MLS numbers and addresses.</strong> I'll call the listing agents to gauge motivation, get pre-inspection info, and check for offer deadlines.</li>
+    </ul>
+
+    <div class="image-split">
+      <div class="image-block" style="background-image: url('img/va-brick-foursquares.jpg');"></div>
+      <div class="image-block" style="background-image: url('img/va-manor-lawn.jpg');"></div>
+    </div>
+
+    <h3 style="margin-top: 48px;">Making the most of showings</h3>
+    <ul class="check-list">
+      <li><strong>Re-read your needs/wants list before each showing.</strong> Keeps you objective when emotions run high.</li>
+      <li><strong>Take photos and short videos.</strong> By house #4 they all blur together.</li>
+      <li><strong>Don't get distracted by staging.</strong> Furniture and paint go away. Layout, light, and lot don't.</li>
+      <li><strong>Open every closet.</strong> Storage matters more than buyers expect.</li>
+      <li><strong>Run the water, flush toilets, test light switches.</strong> You'd be surprised what gets caught.</li>
+      <li><strong>Take your time.</strong> If a home makes a strong first impression, tell me. I'll have us linger.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Step 3: Offer & Contract ===== -->
+<section id="contract">
+  <div class="container">
+    <span class="section-tag">Step 03 · Under Contract</span>
+    <h2 class="section-title">Making an <em>offer that lands</em></h2>
+    <p class="section-lead">You've found "the one." Now let's craft an offer that gets accepted, without overpaying or stripping out protections you actually need.</p>
+
+    <h3>What makes an offer stand out</h3>
+    <ul class="check-list">
+      <li><strong>A current pre-approval letter.</strong> Signals you're serious, qualified, and ready to close.</li>
+      <li><strong>Strong (not necessarily highest) price.</strong> I pull comps and read the seller's motivation. Sometimes a clean offer at list beats a higher offer with a long contingency list.</li>
+      <li><strong>Larger earnest money deposit.</strong> Shows skin in the game. We use the inspection contingency to protect it.</li>
+      <li><strong>Cash, if you have it, say so.</strong> No financing risk = less to worry about for the seller. We can still recommend an inspection.</li>
+      <li><strong>Quick close.</strong> 21–25 days reads as "professional" to listing agents. We only commit to it if your lender can deliver.</li>
+      <li><strong>Smart contingencies, not no contingencies.</strong> Inspection, financing, and appraisal contingencies exist to protect you. We'll trim what's safe to trim and keep what matters.</li>
+    </ul>
+
+    <div class="callout new" style="margin-top: 40px;">
+      <div class="callout-title">When you're ready, I'll structure an offer that gives you every advantage</div>
+      <p>I read the seller's motivation, the days on market, the condition of the home, and recent comps. Then I build the offer around what's actually likely to win, not a generic template.</p>
+    </div>
+
+    <div class="image-block wide" style="background-image: url('img/va-rva-bridge.jpg');"></div>
+
+    <h3 style="margin-top: 56px;">We're under contract. Now what?</h3>
+    <p>Cue the confetti. Then we get to work. Here's what happens in the days that follow:</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-meta">Day 1 – 3</div>
+        <h4>Mutual Execution & Earnest Money</h4>
+        <p>Once both parties sign, the contract is "executed." You'll deliver your earnest money deposit to the escrow agent named in the contract (often the settlement company) by the date in the contract. Keep it reasonable: once it's deposited, it's released only at settlement, by written agreement of both sides, or by a court.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-meta">Day 1 – 5</div>
+        <h4>Loan Application Begins</h4>
+        <p>Your loan application must be made by the deadline in your contract (often within 5 days of ratification). Critically: <strong>do not change jobs, finance a car, open new credit cards, or make any large purchases</strong> until after closing. Anything that touches your credit can derail the loan.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-meta">Day 3 – 10</div>
+        <h4>Inspections Scheduled</h4>
+        <p>We schedule inspections immediately so we have time to renegotiate or walk away before the home inspection contingency deadline written into your contract. If the home is in an HOA or condo association, you'll also get the resale disclosure packet, and Virginia law gives you a short window (3 days after you receive it) to cancel.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-meta">Day 10 – 15</div>
+        <h4>Inspection Resolution & Insurance</h4>
+        <p>We negotiate any inspection issues with the seller. Simultaneously, you're getting insurance quotes, since the home needs to be insurable to close.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-meta">Day 15 – 25</div>
+        <h4>Appraisal & Underwriting</h4>
+        <p>Lender orders the appraisal. If it comes in below offer price, we may renegotiate or you cover the gap. Underwriting works through your file.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-meta">Day 25 – 30</div>
+        <h4>Clear-to-Close & Final Walk-Through</h4>
+        <p>The lender issues "clear-to-close." We do a final walk-through (usually the morning of closing) to confirm the home is in the condition we agreed to.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-meta">Closing Day</div>
+        <h4>Sign & Get the Keys</h4>
+        <p>You wire your closing funds, sign a stack of paperwork, and walk out with the keys to your new home.</p>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top: 48px;">
+      <div class="callout-title">⚠ Wire Fraud Warning · <strong>Read This Twice</strong></div>
+      <p><strong>Wire fraud is the #1 financial threat in real estate transactions.</strong> Scammers spoof emails from settlement agents, title companies, and lenders with fake wire instructions. Before sending ANY funds:</p>
+      <p style="margin-top: 12px;">→ <strong>Call the settlement agent at a number you've independently verified</strong> (not one from an email).<br>
+      → Confirm the routing number, account number, and recipient name verbally.<br>
+      → Never trust wire instructions sent only by email, even if they look like they came from me.</p>
+      <p style="margin-top: 12px;"><strong>A note on AI-driven scams:</strong> Scammers now use cloned voices, fake video calls, and convincing AI-generated emails. To be unmistakably clear: I will never call, text, or email you asking for money, gift cards, or a fee of any kind, and I will never ask you to redirect or alter wiring instructions. If anyone claiming to be me asks for funds, it is not me. Hang up and call my known number.</p>
+      <p style="margin-top: 12px;">If something feels off, stop. Call me. I'd rather we miss a deadline than lose your down payment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Step 4: Due Diligence ===== -->
+<section id="diligence" class="alt">
+  <div class="container">
+    <span class="section-tag">Step 04 · Due Diligence</span>
+    <h2 class="section-title">Inspections, <em>appraisal</em> & insurance</h2>
+    <p class="section-lead">This is where the home reveals itself. A few hundred dollars in inspections has saved my clients tens of thousands in surprises, and given them leverage to renegotiate.</p>
+
+    <div class="faq">
+      <details open>
+        <summary>What is a home inspection, exactly?</summary>
+        <div class="faq-body">
+          <p>A licensed inspector spends 2–4 hours going through every accessible system in the home: roof, foundation, HVAC, plumbing, electrical, attic, crawlspace, appliances. You get a written report (usually with photos) of everything they found.</p>
+          <p>I always recommend you attend the last 30 minutes of the inspection. The inspector will walk you through major findings in person, and you can ask questions you'd never think of from a written report.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What does "inspection period" mean?</summary>
+        <div class="faq-body">
+          <p>It's the window in your contract where you have the right to inspect, request repairs or credits, or walk away with your earnest money intact. In Virginia, we write the number of days into the home inspection contingency, and you must get the inspection and deliver your repair request or termination notice before that deadline.</p><p>Virginia is a "buyer beware" state. Under the Virginia Residential Property Disclosure Act (Va. Code §55.1-700 et seq.), the seller's disclosure mostly tells you the seller makes no representations about condition, and that it's on you to investigate. That's why inspections carry more weight here.</p>
+          <p>Miss those dates and you lose your leverage, which is why we schedule everything immediately.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>The home looks great. Do I really need inspections?</summary>
+        <div class="faq-body">
+          <p>Yes. Always. Some of the most expensive issues (leaky roofs, foundation cracks, sewer line damage, polybutylene plumbing, knob-and-tube wiring, radon) aren't visible during a showing. A few hundred dollars now can save you tens of thousands later.</p>
+          <p>The only time I sometimes advise skipping an inspection is on a brand-new build with a strong builder warranty, and even then I usually recommend a third-party walk.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What if the inspection finds problems?</summary>
+        <div class="faq-body">
+          <p>You have three main paths: ask the seller to fix it, ask for a price reduction or closing cost credit (often easier than waiting on repairs), or terminate the contract and get your earnest money back.</p>
+          <p>I'll guide you on what's reasonable to ask for, what's normal wear, and what's a deal-killer.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is an appraisal and what if it comes in low?</summary>
+        <div class="faq-body">
+          <p>The appraisal is a lender-required estimate of the home's value, done by a licensed appraiser. The lender uses it to confirm they're not lending more than the home is worth.</p>
+          <p>If it comes in low, we have options: ask the seller to lower the price, you bring extra cash to cover the gap, or split the difference. We'll talk through the math and your comfort level.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="image-block wide" style="background-image: url('img/va-farmhouse.jpg');"></div>
+
+    <h3 style="margin-top: 56px;">Inspection Cheat Sheet</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Inspection</th><th>What it covers</th><th>Ballpark Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Standard</strong> <span class="freq-badge typical">Typical</span></td>
+          <td>Heating, A/C, plumbing, electrical, roof, attic, foundation, structural components, appliances, walls, ceilings, windows, doors.</td>
+          <td class="cost">$400 – $650</td>
+        </tr>
+        <tr>
+          <td><strong>Sewer Scope</strong> <span class="freq-badge typical">Recommended</span></td>
+          <td>Camera inspection of the underground sewer line for blockages, root intrusion, bellies, and breaks. Recommended on every home, regardless of age: newer lines can be crushed or misaligned during construction, and older Richmond lines are often clay or cast iron. The line from the house to the street is usually the owner's to repair, and a standard inspection does not look inside it.</td>
+          <td class="cost">$150 – $250</td>
+        </tr>
+        <tr>
+          <td><strong>Radon</strong> <span class="freq-badge situational">Recommended</span></td>
+          <td>Measures radon gas levels. Levels vary across Virginia, and the only way to know a house is to test it. Mitigation systems typically run $1,200 to $2,500 if needed.</td>
+          <td class="cost">$150 – $225</td>
+        </tr>
+        <tr>
+          <td><strong>Wood-Destroying Insect</strong> <span class="freq-badge typical">Typical in VA</span></td>
+          <td>Termite and wood-boring insect inspection. Virginia contracts commonly call for this report before settlement, and the contract spells out who pays for treatment and damage repair.</td>
+          <td class="cost">$75 – $150</td>
+        </tr>
+        <tr>
+          <td><strong>Well & Septic</strong> <span class="freq-badge situational">As Needed</span></td>
+          <td>Common in Hanover, Goochland, New Kent, and parts of Chesterfield. Water quality test for the well, pump and inspection for the septic. Each needs its own contingency in the contract.</td>
+          <td class="cost">$300 – $800</td>
+        </tr>
+        <tr>
+          <td><strong>Crawlspace / Moisture</strong> <span class="freq-badge situational">As Needed</span></td>
+          <td>Many Central Virginia homes sit on crawlspaces. Humidity, standing water, and wood rot show up here first. Often flagged by the standard inspection.</td>
+          <td class="cost">$0 – $300</td>
+        </tr>
+        <tr>
+          <td><strong>Lead-Based Paint</strong> <span class="freq-badge situational">As Needed</span></td>
+          <td>Recommended for any home built before 1978.</td>
+          <td class="cost">$80 – $200</td>
+        </tr>
+        <tr>
+          <td><strong>Mold / Air Quality</strong> <span class="freq-badge situational">As Needed</span></td>
+          <td>If you suspect water damage or smell something off. Often added after the standard inspection flags it.</td>
+          <td class="cost">$300 – $700</td>
+        </tr>
+        <tr>
+          <td><strong>Roof (specialty)</strong> <span class="freq-badge situational">As Needed</span></td>
+          <td>If insurance flags the roof or it's 15+ years old. Roofers can give a more thorough assessment than a general inspector.</td>
+          <td class="cost">$0 – $300 (often free quote)</td>
+        </tr>
+        <tr>
+          <td><strong>Structural Engineer</strong> <span class="freq-badge situational">As Needed</span></td>
+          <td>Recommended when the standard inspection flags foundation cracks, settling, or other structural concerns. They evaluate load-bearing systems and write a report you can use to renegotiate or walk.</td>
+          <td class="cost">$300 – $700</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 13px; color: var(--muted); margin-top: 12px;">Ballpark ranges only. I'll get current quotes from inspectors I trust before we schedule.</p>
+
+    <div class="callout warn" style="margin-top: 56px;">
+      <div class="callout-title">Insurance is the new inspection</div>
+      <p>Homeowners insurance has gotten harder and more expensive, especially for homes with older roofs, homes in or near a FEMA flood zone, and older Richmond homes with dated wiring or plumbing. We'll loop in an insurance agent <strong>during inspections</strong>, not after, so we can renegotiate or walk away if a home turns out to be uninsurable at a reasonable rate.</p>
+    </div>
+
+    <h3 style="margin-top: 56px;">Home Insurance Cheat Sheet</h3>
+    <p>If you're financing, your lender will require homeowner's insurance, and they'll require it bound before closing. Start getting quotes the day we go under contract.</p>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Type</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Homeowner's (HO-3)</strong> <span class="freq-badge typical">Required</span></td><td>The standard policy. Covers loss from disasters, theft, accidents, and liability.</td></tr>
+        <tr><td><strong>Hazard</strong> <span class="freq-badge typical">Typical</span></td><td>Often part of the homeowner's policy. Covers fire, severe storms, and fallen trees. Read the wind and hurricane deductible carefully.</td></tr>
+        <tr><td><strong>Flood</strong> <span class="freq-badge situational">As Needed</span></td><td>Separate policy. Required if you're in a FEMA flood zone. Worth considering even if not required, especially near the James, the Chickahominy, the Appomattox, or local creeks. We check the FEMA map before writing an offer.</td></tr>
+        <tr><td><strong>Windstorm</strong> <span class="freq-badge typical">Typical in VA</span></td><td>Tornado, hurricane remnants, severe wind. Usually included in standard policies, sometimes with a separate deductible.</td></tr>
+        <tr><td><strong>Earthquake</strong> <span class="freq-badge situational">As Needed</span></td><td>Separate add-on. Low risk in Central Virginia, though the 2011 Mineral, VA earthquake was felt across Richmond. Worth a conversation.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout warn" style="margin-top: 32px;">
+      <div class="callout-title">Insurance pitfalls I see often</div>
+      <p>→ Homes with roofs older than 15–20 years can get denied or hit with very high deductibles.<br>
+      → Flood zones and older electrical or plumbing can narrow your carrier options, so you may need to shop several.<br>
+      → "Actual cash value" vs "replacement cost": make sure you're getting the right one. ACV pays you depreciated value, RC pays to actually replace.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Step 5: Closing ===== -->
+<div class="section-banner" style="background-image: url('img/va-james-sunset.jpg'); background-position: center 50%;"></div>
+
+<section id="closing">
+  <div class="container">
+    <span class="section-tag">Step 05 · Closing Time</span>
+    <h2 class="section-title">From <em>"clear-to-close"</em> to keys in hand</h2>
+    <p class="section-lead">You've made it. Here's what happens in the final stretch, and what to expect on closing day.</p>
+
+    <div class="faq">
+      <details open>
+        <summary>When is the final walk-through?</summary>
+        <div class="faq-body">
+          <p>Usually the day of closing or the night before. You'll walk through the home one last time to confirm it's in the agreed-upon condition, that any negotiated repairs were completed, and that nothing has changed since your last visit.</p>
+          <p>If something is off (a damaged wall, missing appliances, repairs not done), we address it before you sign. Don't skip this.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Who's at closing?</summary>
+        <div class="faq-body">
+          <p>In Virginia, closing is called settlement, and it's run by a settlement agent (a real estate attorney or title company). As the buyer, you choose the settlement agent. Typically it's you, me, and the settlement agent. The seller and their agent may or may not be in the room. Many settlements are now done separately or remotely.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What will I do at closing?</summary>
+        <div class="faq-body">
+          <p>Sign. A lot. Stretch your fingers. The seller signs ownership over to you, you sign your loan documents and acknowledge receipt. The whole thing usually takes 60–90 minutes.</p>
+          <p>Once it's all signed and funded, the settlement agent records the deed with the Circuit Court Clerk, and you'll get the keys (sometimes immediately, sometimes once recording is confirmed).</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What should I bring?</summary>
+        <div class="faq-body">
+          <p>→ A government-issued photo ID.<br>
+          → Wired closing funds (sent to the settlement agent in advance; see the wire fraud warning above).<br>
+          → A second form of ID if your closing agent requests it.<br>
+          → Patience. And maybe water.</p>
+          <p>I'll send you a closing prep email a few days before with anything specific to your transaction.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can closing day go wrong?</summary>
+        <div class="faq-body">
+          <p>Occasionally, usually due to last-minute lender issues, missing documents, or a problem flagged at the final walk-through. I prep you for the closing well in advance specifically to head these off. If something goes sideways, we usually push by a day or two. Not catastrophic.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Moving Checklist ===== -->
+<section class="alt" id="moving">
+  <div class="container">
+    <span class="section-tag">Bonus</span>
+    <h2 class="section-title">Your <em>moving checklist</em></h2>
+    <p class="section-lead">Keys in hand? Now the fun part. Use the interactive checklist below, or download the printable PDF to keep on your fridge.</p>
+
+    <a href="https://anastasia-buyer-guide.netlify.app/Moving-Checklist-Anastasia-Morgan.pdf" target="_blank" rel="noopener" class="download-btn">Download Printable PDF</a>
+
+    <div class="moving-block">
+      <h4>4–6 Weeks Before Moving</h4>
+      <div class="moving-grid">
+        <label><input type="checkbox"> Declutter, discard & donate</label>
+        <label><input type="checkbox"> Choose a mover and sign contract</label>
+        <label><input type="checkbox"> Collect quotes from moving companies</label>
+        <label><input type="checkbox"> Create a file of moving-related papers and receipts</label>
+        <label><input type="checkbox"> Locate schools, healthcare in your new area</label>
+        <label><input type="checkbox"> Contact homeowner's insurance about coverage during move</label>
+        <label><input type="checkbox"> Secure off-site storage if needed</label>
+        <label><input type="checkbox"> Confirm new home insurance policy is bound</label>
+      </div>
+    </div>
+
+    <div class="moving-block">
+      <h4>3–4 Weeks Before Moving</h4>
+      <div class="moving-grid">
+        <label><input type="checkbox"> Update address: Banks + Post Office</label>
+        <label><input type="checkbox"> Schedule electric transfer/setup</label>
+        <label><input type="checkbox"> Update address: Credit Card Companies</label>
+        <label><input type="checkbox"> Schedule water transfer/setup</label>
+        <label><input type="checkbox"> Update address: Insurance Companies</label>
+        <label><input type="checkbox"> Schedule gas transfer/setup</label>
+        <label><input type="checkbox"> Update address: Family + Friends</label>
+        <label><input type="checkbox"> Schedule internet, trash, TV setup</label>
+      </div>
+    </div>
+
+    <div class="moving-block">
+      <h4>2–3 Weeks Before Moving</h4>
+      <div class="moving-grid">
+        <label><input type="checkbox"> Notify DMV of new address</label>
+        <label><input type="checkbox"> Open/close bank accounts as needed</label>
+        <label><input type="checkbox"> Discontinue lawn care, housekeeper, etc.</label>
+        <label><input type="checkbox"> Arrange child and pet care for moving day</label>
+        <label><input type="checkbox"> Use up perishables you can't move</label>
+        <label><input type="checkbox"> Notify HOA, reserve elevator if needed</label>
+      </div>
+    </div>
+
+    <div class="moving-block">
+      <h4>1 Week Before Moving</h4>
+      <div class="moving-grid">
+        <label><input type="checkbox"> Confirm final arrangements with movers</label>
+        <label><input type="checkbox"> Take photos of your old home (memories!)</label>
+        <label><input type="checkbox"> Arrange transportation for pets and plants</label>
+        <label><input type="checkbox"> Pack an essentials box for first night</label>
+        <label><input type="checkbox"> Review moving-day plan with mover</label>
+        <label><input type="checkbox"> Label every box with contents and room</label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / Contact ===== -->
+<section id="contact" class="cta">
+  <span class="section-tag">Let's Get Started</span>
+  <h2>Ready to find <em>your home?</em></h2>
+  <p class="cta-lead">Whether you're 6 weeks away or 6 months away, the best time to start is now. Let's grab a coffee, walk through your goals, and build a plan.</p>
+
+  <div class="cta-grid">
+    <div>
+      <div class="label">Call or Text</div>
+      <div class="value"><a href="tel:+18044951559">804 · 495 · 1559</a></div>
+    </div>
+    <div>
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:anastasiaestateco@gmail.com">anastasiaestateco<br>@gmail.com</a></div>
+    </div>
+    <div>
+      <div class="label">Brokerage</div>
+      <div class="value">eXp Realty, LLC</div>
+    </div>
+  </div>
+
+  <a href="https://calendar.app.google/UT5WJFTEnGH1UFci7" target="_blank" rel="noopener" class="cta-button">Schedule a Buyer Consultation</a>
+  <p style="font-size: 12px; opacity: 0.75; margin-top: 28px;">Real Estate Salesperson, VA License 0225280741 · eXp Realty, LLC, 717 North Courthouse Road, North Chesterfield, VA 23236 · (804) 495-1559</p>
+</section>
+
+<footer>
+  © 2026 Anastasia Morgan · Realtor® · <span class="exp">eXp Realty, LLC</span><br>
+  Virginia: Anastasia Morgan, Real Estate Salesperson, VA License 0225280741 · eXp Realty, LLC, VA Firm License 0226023254 · 717 North Courthouse Road, North Chesterfield, VA 23236 · <a href="tel:+18044951559">(804) 495-1559</a><br>
+  Colorado: Anastasia Morgan, Associate Broker, CO License FA100099553 · eXp Realty, LLC, CO Brokerage License EC100037453 · 9800 Pyramid Ct Ste 400, Englewood, CO 80112 · <a href="tel:+17193077392">(719) 307-7392</a><br>
+  Equal Housing Opportunity · Photos via Unsplash
+</footer>
+
+</body>
+</html>
